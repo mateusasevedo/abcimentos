@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<ui:composition template="/template.xhtml">
+<ui:define name="titulo">Edição de Cliente</ui:define>
+<ui:define name="corpo">
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel>Nome</h:outputLabel>
+			<h:inputText value="#{clientebd.cliente.nome}" required="true"/>
+			
+			<h:outputLabel>CPF</h:outputLabel>
+			<h:inputText value="#{clientebd.cliente.cpf}" required="true"/>
+			
+			<h:outputLabel>CNPJ</h:outputLabel>
+			<h:inputText value="#{clientebd.cliente.cnpj}" required="true"/>			
+			
+			<h:outputLabel>Endereço</h:outputLabel>
+			<h:inputText value="#{clientebd.cliente.endereco}" required="true"/>
+			
+			<h:outputLabel>Cidade</h:outputLabel>
+			<h:inputText value="#{clientebd.cliente.cidade}" required="true"/>
+			
+			<h:outputLabel>Bairro</h:outputLabel>
+			<h:inputText value="#{clientebd.cliente.bairro}" required="true"/>
+			
+			<h:outputLabel>Estado</h:outputLabel>
+			<h:inputText value="#{clientebd.cliente.estado}" required="true"/>
+			
+			<h:outputLabel>CEP</h:outputLabel>
+			<h:inputText value="#{clientebd.cliente.cep}" required="true"/>			
+			
+			<h:outputLabel>Telefone1</h:outputLabel>
+			<h:inputText value="#{clientebd.cliente.telefone1}" required="true"/>
+			
+			<h:outputLabel>Telefone2</h:outputLabel>
+			<h:inputText value="#{clientebd.cliente.telefone2}" required="true"/>
+			
+			<h:outputLabel>E-mail</h:outputLabel>
+			<h:inputText value="#{clientebd.cliente.email}" required="true"/>
+						
+			<h:outputLabel>Mensagem</h:outputLabel>
+			<h:inputText value="#{clientebd.cliente.mensagem}" required="true"/>
+						
+			<h:commandButton value="Cancelar" action="#{clientebd.principal}" />
+			<h:commandButton value="Editar" action="#{clientebd.inserir}" styleClass="btn btn-secondary"/>
+		</h:panelGrid>
+	</h:form>
+</ui:define>
+</ui:composition>
+</html>

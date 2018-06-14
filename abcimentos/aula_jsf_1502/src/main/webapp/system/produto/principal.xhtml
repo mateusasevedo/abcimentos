@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="/template.xhtml">
+	<ui:define name="titulo">Produtos</ui:define>
+	<ui:define name="corpo">
+	<h:form>
+	<h:commandLink value='Cadastrar produto' action='#{usuario.cadproduto}'
+						styleClass="btn btn-secondary" />
+	<h:commandLink value='Listar' action='#{produtobd.listar}'
+						styleClass="btn btn-secondary" />
+	</h:form>
+		<h:dataTable id='tabela' value="#{produtobd.produtos}" var='produto' border="1">
+			<h:column>
+				<f:facet name='header'>
+					Descrição
+				</f:facet>
+				#{produto.descricao}
+			</h:column>
+			<h:column>
+				<f:facet name='header'>
+					Marca
+				</f:facet>
+				#{produto.marca}
+			</h:column>
+			<h:column>
+				<f:facet name='header'>
+					Unidade
+				</f:facet>
+				#{produto.unidade}
+			</h:column>
+			<h:column>
+				<f:facet name='header'>
+					Peso
+				</f:facet>
+				#{produto.peso}
+			</h:column>
+			
+			<h:column>
+				<h:form>
+				<div class="btn-group" role="group" aria-label="Basic example">
+					<h:commandButton value='Editar' action="#{produtobd.editar(produto)}" styleClass="btn btn-secondary"/>
+					<h:commandButton value='Excluir' action="#{produtobd.excluir(produto)}" styleClass="btn btn-danger">
+						<f:ajax event='action' render='tabela textoajax'></f:ajax>
+					</h:commandButton>
+				</div>
+				</h:form>
+			</h:column>
+		</h:dataTable>
+		<h:outputLabel id='textoajax' value='#{produtobd.mensagem}'></h:outputLabel>
+	</ui:define>
+
+</ui:composition>
+</html>

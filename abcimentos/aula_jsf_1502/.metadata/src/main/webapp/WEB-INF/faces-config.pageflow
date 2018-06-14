@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" comment="" id="pf15187034215315" configfile="/aula_jsf_1502/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="36" y="156" id="pf15192883275870" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" outlinks="pf15192883275882 pf15247312445090" inlinks="pf15192883275882 pf15204990771470" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="360" y="12" id="pf15204990771473" referenceLink="//@navigationRule.16/@fromViewId|" outlinks="pf15204990771470 pf15247315155613 pf15247315155614 pf15265649831576 pf15283255114316 pf152832824848013" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="system/principal.xhtml" x="12" y="358" id="pf15247312445101" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf15247312445090 pf15247315155613 pf15247315155626" path="/system/principal.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="system/livro/cadastro.xhtml" x="432" y="216" id="pf15247315155629" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf15247315155626 pf152473151556210" inlinks="pf15247315155614 pf152473151556210" path="/system/livro/cadastro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="system/cliente/cadastro.xhtml" x="535" y="444" id="pf15265593136251" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf15283255114317" inlinks="pf15283255114318" path="/system/cliente/cadastro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="system/venda/cadastro.xhtml" x="1106" y="168" id="pf15265628423675" referenceLink="//@navigationRule.18/@fromViewId|" outlinks="pf152832824848014" inlinks="pf152832824848015" path="/system/venda/cadastro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="system/produto/principal.xhtml" x="649" y="240" id="pf15265649831578" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" outlinks="pf15283241543572 pf15283246360684" inlinks="pf15265649831576 pf15283244739103 pf152832686001512" path="/system/produto/principal.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="system/produto/cadastro.xhtml" x="840" y="276" id="pf15283238806651" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf15283244739103" inlinks="pf15283241543572" path="/system/produto/cadastro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="system/produto/edicao.xhtml" x="720" y="374" id="pf15283246360685" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf152832686001512" inlinks="pf15283246360684" path="/system/produto/edicao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="system/cliente/edicao.xhtml" x="180" y="468" id="pf15283255114319" referenceLink="//@navigationRule.19/@fromViewId|" outlinks="pf152832883500720" inlinks="pf152832551143110" path="/system/cliente/edicao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="system/cliente/principal.xhtml" x="312" y="358" id="pf152832551143111" referenceLink="//@navigationRule.19/@navigationCase.0/@toViewId|" outlinks="pf15283255114318 pf152832551143110" inlinks="pf15283255114316 pf15283255114317 pf152832883500720" path="/system/cliente/principal.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="system/venda/edicao.xhtml" x="1080" y="264" id="pf152832824848016" referenceLink="//@navigationRule.17/@fromViewId|" outlinks="pf152832824848017" inlinks="pf152832824848018" path="/system/venda/edicao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="system/venda/principal.xhtml" x="924" y="170" id="pf152832824848019" referenceLink="//@navigationRule.18/@navigationCase.0/@toViewId|" outlinks="pf152832824848015 pf152832824848018" inlinks="pf152832824848013 pf152832824848017 pf152832824848014" path="/system/venda/principal.xhtml"/>
+  <links id="pf15192883275882" target="pf15192883275870" source="pf15192883275870" outcome="falha" redirect="true"/>
+  <links id="pf15204990771470" target="pf15192883275870" source="pf15204990771473" outcome="logout" redirect="true"/>
+  <links id="pf15247312445090" target="pf15247312445101" source="pf15192883275870" outcome="sucesso" redirect="true"/>
+  <links id="pf15247315155613" target="pf15247312445101" source="pf15204990771473" outcome="principal" redirect="true"/>
+  <links id="pf15247315155614" target="pf15247315155629" source="pf15204990771473" outcome="cadlivro" redirect="true"/>
+  <links id="pf15247315155626" target="pf15247312445101" source="pf15247315155629" outcome="sucesso" redirect="true"/>
+  <links id="pf152473151556210" target="pf15247315155629" source="pf15247315155629" outcome="falha"/>
+  <links id="pf15265649831576" target="pf15265649831578" source="pf15204990771473" outcome="listproduto"/>
+  <links id="pf15283241543572" target="pf15283238806651" source="pf15265649831578" outcome="cadproduto"/>
+  <links id="pf15283244739103" target="pf15265649831578" source="pf15283238806651"/>
+  <links id="pf15283246360684" target="pf15283246360685" source="pf15265649831578" outcome="editar"/>
+  <links id="pf15283255114316" target="pf152832551143111" source="pf15204990771473" outcome="listcliente"/>
+  <links id="pf15283255114318" target="pf15265593136251" source="pf152832551143111" outcome="cadcliente"/>
+  <links id="pf15283255114317" target="pf152832551143111" source="pf15265593136251" outcome="sucesso"/>
+  <links id="pf152832551143110" target="pf15283255114319" source="pf152832551143111" outcome="editar"/>
+  <links id="pf152832686001512" target="pf15265649831578" source="pf15283246360685" outcome="sucesso"/>
+  <links id="pf152832824848015" target="pf15265628423675" source="pf152832824848019" outcome="cadvenda"/>
+  <links id="pf152832824848018" target="pf152832824848016" source="pf152832824848019" outcome="editar"/>
+  <links id="pf152832824848013" target="pf152832824848019" source="pf15204990771473" outcome="listvenda"/>
+  <links id="pf152832824848017" target="pf152832824848019" source="pf152832824848016" outcome="sucesso"/>
+  <links id="pf152832824848014" target="pf152832824848019" source="pf15265628423675" outcome="sucesso"/>
+  <links id="pf152832883500720" target="pf152832551143111" source="pf15283255114319" outcome="sucesso"/>
+</pageflow:Pageflow>

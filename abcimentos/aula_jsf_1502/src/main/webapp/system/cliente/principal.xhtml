@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="/template.xhtml">
+	<ui:define name="titulo">Clientes</ui:define>
+	<ui:define name="corpo">
+	<h:form>
+	<h:commandLink value='Cadastrar cliente' action='#{usuario.cadcliente}'
+						styleClass="btn btn-secondary" />
+	<h:commandLink value='Listar' action='#{clientebd.listar}'
+						styleClass="btn btn-secondary" />
+	</h:form>
+		<h:dataTable id='tabela' value="#{clientebd.clientes}" var='cliente' border="1">
+			<h:column>
+				<f:facet name='header'>
+					Nome
+				</f:facet>
+				#{cliente.nome}
+			</h:column>
+			<h:column>
+				<f:facet name='header'>
+					CPF
+				</f:facet>
+				#{cliente.cpf}
+			</h:column>
+			<h:column>
+				<f:facet name='header'>
+					CNPJ
+				</f:facet>
+				#{cliente.cnpj}
+			</h:column>
+			<h:column>
+				<f:facet name='header'>
+					Endereço
+				</f:facet>
+				#{cliente.endereco}
+			</h:column>
+			<h:column>
+				<f:facet name='header'>
+					Bairro
+				</f:facet>
+				#{cliente.bairro}
+			</h:column>
+			<h:column>
+				<f:facet name='header'>
+					Cidade
+				</f:facet>
+				#{cliente.cidade}
+			</h:column>
+			<h:column>
+				<f:facet name='header'>
+					Estado
+				</f:facet>
+				#{estadomb.estado.sigla}
+			</h:column>
+			<h:column>
+				<f:facet name='header'>
+					CEP
+				</f:facet>
+				#{cliente.cep}
+			</h:column>
+			<h:column>
+				<f:facet name='header'>
+					Telefone1
+				</f:facet>
+				#{cliente.telefone1}
+			</h:column>
+			<h:column>
+				<f:facet name='header'>
+					Telefone2
+				</f:facet>
+				#{cliente.telefone2}
+			</h:column>
+			<h:column>
+				<f:facet name='header'>
+					Email
+				</f:facet>
+				#{cliente.email}
+			</h:column>
+			<h:column>
+				<f:facet name='header'>
+					mensagem
+				</f:facet>
+				#{cliente.mensagem}
+			</h:column>	
+			
+			<h:column>
+				<h:form>
+				<div class="btn-group" role="group" aria-label="Basic example">
+					<h:commandButton value='Editar' action="#{clientebd.editar(cliente)}" styleClass="btn btn-secondary"/>
+					<h:commandButton value='Excluir' action="#{clientebd.excluir(cliente)}" styleClass="btn btn-danger">
+						<f:ajax event='action' render='tabela textoajax'></f:ajax>
+					</h:commandButton>
+				</div>
+				</h:form>
+			</h:column>
+		</h:dataTable>
+		<h:outputLabel id='textoajax' value='#{clientebd.mensagem}'></h:outputLabel>
+	</ui:define>
+
+</ui:composition>
+</html>
